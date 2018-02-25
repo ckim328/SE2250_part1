@@ -128,11 +128,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4399675071434848}
   - component: {fileID: 54654386898528734}
-  - component: {fileID: 114877215954008320}
   - component: {fileID: 114342956337285306}
+  - component: {fileID: 114568006702100272}
   m_Layer: 0
   m_Name: Enemy_1
-  m_TagString: EN1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf68971cbbc07d245a42845c822bfbee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
+  radius: -2.5
   keepOnScreen: 0
   isOnScreen: 1
   camWidth: 0
@@ -673,7 +673,7 @@ MonoBehaviour:
   offLeft: 0
   offUp: 0
   offDown: 0
---- !u!114 &114877215954008320
+--- !u!114 &114568006702100272
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -681,14 +681,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1849624635406642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b6a836486ba47e468aa82484b1c0599, type: 3}
+  m_Script: {fileID: 11500000, guid: bc1a9b9ca4f4df04181102929c9ede0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
   fireRate: 0.3
   health: 10
   score: 100
-  bndCheck: {fileID: 0}
+  movetype: 0
 --- !u!135 &135046617217586380
 SphereCollider:
   m_ObjectHideFlags: 1

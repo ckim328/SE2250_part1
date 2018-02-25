@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy_1 : Enemy {
-
+	public int movetype;
+	void Start(){
+		movetype = Random.Range (0, 2);
+	}
 	public override void Move(){
 		Vector3 tempPos = pos;
-		int movetype = Random.Range (0, 1);
+
 		switch (movetype) {
 		case 0:
 			tempPos.x -= speed * Time.deltaTime;

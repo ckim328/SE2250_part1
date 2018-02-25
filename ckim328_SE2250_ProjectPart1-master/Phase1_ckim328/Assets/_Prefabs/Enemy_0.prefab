@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 114862294366913218}
   m_Layer: 0
   m_Name: Enemy_0
-  m_TagString: EN0
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,7 +534,6 @@ MonoBehaviour:
   fireRate: 0.3
   health: 10
   score: 100
-  bndCheck: {fileID: 0}
 --- !u!114 &114862294366913218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -546,7 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf68971cbbc07d245a42845c822bfbee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
+  radius: -2.5
   keepOnScreen: 0
   isOnScreen: 1
   camWidth: 0
