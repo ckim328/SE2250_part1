@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 114342956337285306}
   m_Layer: 0
   m_Name: Enemy_1
-  m_TagString: Untagged
+  m_TagString: EN1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -688,6 +688,7 @@ MonoBehaviour:
   fireRate: 0.3
   health: 10
   score: 100
+  bndCheck: {fileID: 0}
 --- !u!135 &135046617217586380
 SphereCollider:
   m_ObjectHideFlags: 1

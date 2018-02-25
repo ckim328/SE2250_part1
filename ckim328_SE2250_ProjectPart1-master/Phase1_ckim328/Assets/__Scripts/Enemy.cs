@@ -23,29 +23,24 @@ public class Enemy : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame  
 	void Update () {
-		MoveDown();
+		Move();
 
 		if (bndCheck!= null&& bndCheck.offDown){
 			// we have gone off the bottom of the screen so we need to destroy the object 
-				Destroy (gameObject);
+			Destroy (gameObject);
 		}
 
 	}
-	public virtual void MoveDown(){
+	public virtual void Move(){
 		Vector3 tempPos = pos;
 		tempPos.y -= speed * Time.deltaTime;
 		pos = tempPos;
 	}
 
-	public virtual void MoveDiag(){
-		Vector3 tempPos = pos;
-		tempPos.y -= speed * Time.deltaTime;
-		tempPos.x -= speed * Time.deltaTime;
-		pos = tempPos;
-	}
+
 }
