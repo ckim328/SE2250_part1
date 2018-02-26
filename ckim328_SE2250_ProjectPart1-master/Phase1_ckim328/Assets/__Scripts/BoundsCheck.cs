@@ -18,8 +18,8 @@ public class BoundsCheck : MonoBehaviour
 
     void Awake()
     {
-        camHeight = Camera.main.orthographicSize*0.4f;
-        camWidth = camHeight * Camera.main.aspect;
+        camHeight = Camera.main.orthographicSize*1.25f;
+		camWidth = camHeight * Camera.main.aspect;
 
     }
 
@@ -28,24 +28,24 @@ public class BoundsCheck : MonoBehaviour
         Vector3 pos = transform.position;
         isOnScreen = true;
         offRight = offLeft = offUp = offDown = false;
-        if (pos.x > camWidth - radius)
+        if (pos.x > camWidth*0.8f - radius)
         {
-            pos.x = camWidth - radius;
+            pos.x = camWidth*0.8f - radius;
             offRight = true;
         }
-        if (pos.x < -camWidth + radius)
+        if (pos.x < -camWidth*0.8f + radius)
         {
-            pos.x = -camWidth + radius;
+			pos.x = -camWidth*0.8f + radius;
             offLeft = true;
         }
-        if (pos.y > camWidth - radius)
+		if (pos.y > camWidth - radius)
         {
-            pos.y = camWidth - radius;
+			pos.y = camWidth- radius;
             offUp = true;
         }
-        if (pos.y < -camWidth + radius)
+		if (pos.y < -camWidth + radius)
         {
-            pos.y = -camWidth + radius;
+			pos.y = -camWidth + radius;
             offDown = true;
         }
         isOnScreen = !(offRight || offLeft || offUp || offDown);

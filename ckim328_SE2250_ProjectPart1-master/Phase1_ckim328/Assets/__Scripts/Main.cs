@@ -10,7 +10,7 @@ public class Main : MonoBehaviour
 
     public GameObject[] prefabEnemies; //array of enemy prefabs
     public float enemiesSpwnedPerSecond = 0.5f; //#of enemies per second
-    public float enemyDefaultPadding = 1.5f; //padding for position
+    public float enemyDefaultPadding = 10f; //padding for position
 
     private BoundsCheck bndCheck;
 
@@ -39,7 +39,7 @@ public class Main : MonoBehaviour
         float xMin = -bndCheck.camWidth + enemyPadding;
         float xMax = bndCheck.camWidth - enemyPadding;
         pos.x = Random.Range(xMin, xMax);
-        pos.y = bndCheck.camHeight*2.5f + enemyPadding;
+        pos.y = bndCheck.camHeight+ enemyPadding;
         go.transform.position = pos;
 
         Invoke("SpawnEnemy", 1f / enemiesSpwnedPerSecond);
