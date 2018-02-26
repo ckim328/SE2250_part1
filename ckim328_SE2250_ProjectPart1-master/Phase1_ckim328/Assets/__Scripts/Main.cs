@@ -39,7 +39,7 @@ public class Main : MonoBehaviour
         float xMin = -bndCheck.camWidth + enemyPadding;
         float xMax = bndCheck.camWidth - enemyPadding;
         pos.x = Random.Range(xMin, xMax);
-        pos.y = bndCheck.camHeight + enemyPadding;
+        pos.y = bndCheck.camHeight*2.5f + enemyPadding;
         go.transform.position = pos;
 
         Invoke("SpawnEnemy", 1f / enemiesSpwnedPerSecond);
