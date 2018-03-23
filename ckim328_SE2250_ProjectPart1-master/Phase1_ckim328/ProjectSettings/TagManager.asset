@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EN0
   - EN1
+  - ProjectileHero
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - ProjectileHero
   - 
   - 
   - 

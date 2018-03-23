@@ -3,14 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum WeaponType{
+	none,
+	blaster,
+	spread,
+	phaser,
+	missle,
+	laser,
+	shield
+}
 public class Main : MonoBehaviour
 {
     static public Main S;
+	static Dictionary<WeaponType,WeaponDefinition> WEAP_DICT;
 
 
     public GameObject[] prefabEnemies; //array of enemy prefabs
     public float enemiesSpwnedPerSecond = 0.5f; //#of enemies per second
     public float enemyDefaultPadding = 10f; //padding for position
+	public WeaponDefinition[] weaponDefinitions;
 
     private BoundsCheck bndCheck;
 
@@ -19,6 +30,11 @@ public class Main : MonoBehaviour
         S = this;
         bndCheck = GetComponent<BoundsCheck>();
         Invoke("SpawnEnemy", 1f / enemiesSpwnedPerSecond);
+
+		WEAP_DICT= new Dictionary<WeaponType, WeaponDefinition>();
+		foreach (WeaponDefinition def in weaponDefinitions) {
+			WEAP_DICT [def.type] = def;
+		}
     }
 
     public void SpawnEnemy()
@@ -44,6 +60,17 @@ public class Main : MonoBehaviour
 
         Invoke("SpawnEnemy", 1f / enemiesSpwnedPerSecond);
     }
+	static public WeaponDefinition GetWeaponDefinition(WeaponType wt){
+		//checks to make sure key exists in the dictionary
+		// attempting to retrieve a key that doenst exists throws an error
+		if (WEAP_DICT.ContainsKey(wt)) {
+			return ( WEAP_DICT[wt]);
+		}
+			// this will return a new weapon def with  type  none
+			// meaning it has failed to find the right  weapon def
+
+			return(new WeaponDefinition());
+		}
 
 
 }
