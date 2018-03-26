@@ -243,7 +243,7 @@ MonoBehaviour:
     delayBetweenShots: 0.2
     velocity: 50
   - type: 2
-    letter: S
+    letter: V
     color: {r: 0, g: 1, b: 0.91724133, a: 1}
     projectilePrefab: {fileID: 1484168145972074, guid: 4f28c6514821eee408be7ff564646017,
       type: 2}
@@ -524,6 +524,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1129099156 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1635353870040194, guid: f76d7d6e44f99cf4293fc7ceb9d1d760,
+    type: 2}
+  m_PrefabInternal: {fileID: 1758648829}
 --- !u!1 &1357006864
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +652,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114711818335364074, guid: f76d7d6e44f99cf4293fc7ceb9d1d760,
+        type: 2}
+      propertyPath: _type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711818335364074, guid: f76d7d6e44f99cf4293fc7ceb9d1d760,
+        type: 2}
+      propertyPath: collar
+      value: 
+      objectReference: {fileID: 1129099156}
+    - target: {fileID: 114711818335364074, guid: f76d7d6e44f99cf4293fc7ceb9d1d760,
+        type: 2}
+      propertyPath: def.projectilePrefab
+      value: 
+      objectReference: {fileID: 1484168145972074, guid: 4f28c6514821eee408be7ff564646017,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76d7d6e44f99cf4293fc7ceb9d1d760, type: 2}
   m_IsPrefabParent: 0

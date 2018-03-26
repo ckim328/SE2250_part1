@@ -124,6 +124,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa6858651657ea4ead367019d10b767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  def:
+    type: 1
+    letter: 
+    color: {r: 1, g: 1, b: 1, a: 1}
+    projectilePrefab: {fileID: 0}
+    projectileColor: {r: 1, g: 1, b: 1, a: 1}
+    damageOnHit: 0
+    delayBetweenShots: 0
+    velocity: 20
+  rigid: {fileID: 54213386949273846}
+  _type: 0
 --- !u!114 &114918268004333510
 MonoBehaviour:
   m_ObjectHideFlags: 1

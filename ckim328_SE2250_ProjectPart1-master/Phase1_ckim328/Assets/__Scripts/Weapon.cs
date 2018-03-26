@@ -2,17 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class WeaponDefinition{
-	public WeaponType type= WeaponType.none;
-	public string letter;
-	public Color color=Color.white;
-	public GameObject projectilePrefab;
-	public Color projectileColor=Color.white;
-	public float damageOnHit = 0;
-	public float delayBetweenShots= 0;
-	public float velocity=20;
-}
 
 public class Weapon : MonoBehaviour {
 	static public Transform PROJECTILE_ANCHOR;
@@ -41,6 +30,7 @@ public class Weapon : MonoBehaviour {
 		GameObject rootGO = transform.root.gameObject;
 		if (rootGO.GetComponent<Hero> () != null) {
 			rootGO.GetComponent<Hero> ().fireDelegate += Fire;
+		
 		}
 	}
 	public WeaponType type {
@@ -67,6 +57,7 @@ public class Weapon : MonoBehaviour {
 		if (Time.time - lastShotTime < def.delayBetweenShots) {
 			return;
 		}
+
 		Projectile p;
 		Vector3 vel = Vector3.up * def.velocity;
 		if (transform.up.y < 0) {
@@ -82,14 +73,15 @@ public class Weapon : MonoBehaviour {
 			p = MakeProjectile ();//makes the middle projectile
 			p.rigid.velocity = vel;
 			p = MakeProjectile ();//makes right projectile
-			p.transform.rotation = Quaternion.AngleAxis (30, Vector3.back);
+			p.transform.rotation = Quaternion.AngleAxis (30, Vector3.forward);
 			p.rigid.velocity = p.transform.rotation * vel;
 			p = MakeProjectile ();//makes left projectile
-			p.transform.rotation = Quaternion.AngleAxis (-30, Vector3.back);
+			p.transform.rotation = Quaternion.AngleAxis (30, Vector3.back);
 			p.rigid.velocity = p.transform.rotation * vel;
 			break;
 		}
 	}
+
 
 	public Projectile MakeProjectile(){
 		GameObject go = Instantiate<GameObject>(def.projectilePrefab);
@@ -97,8 +89,8 @@ public class Weapon : MonoBehaviour {
 			go.tag="ProjectileHero";
 			go.layer=LayerMask.NameToLayer("ProjectileHero");
 		} else {
-			go.tag= "ProjectileEnemy" ;
-			go.layer= LayerMask.NameToLayer("ProjectileEnemy");
+		//	go.tag= "ProjectileEnemy" ;
+		go.layer= LayerMask.NameToLayer("ProjectileEnemy");
 		}
 		go.transform.position=collar.transform.position;
 		go.transform.SetParent(PROJECTILE_ANCHOR, true);
@@ -110,6 +102,10 @@ public class Weapon : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-			
+		if (Input.GetKeyDown (KeyCode.Alpha1)) {
+			SetType (WeaponType.blaster);
+		} else if (Input.GetKeyDown (KeyCode.Alpha2)) {
+			SetType (WeaponType.spread);
+		}
 	}
 }

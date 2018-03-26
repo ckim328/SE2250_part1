@@ -5,7 +5,10 @@ using UnityEngine;
 public class Hero : MonoBehaviour {
 
 	public delegate void WeaponFireDelegate();
+
+	public static int WeaponSwitch = 0; 
 	public WeaponFireDelegate fireDelegate;
+
 	static public Hero S;
 
 
@@ -27,7 +30,7 @@ public class Hero : MonoBehaviour {
 		} else {
 			Debug.LogError ("Hero.Awake() -Attempted to assign second Hero.S");
 		}
-	//	fireDelegate += TempFire;
+//		fireDelegate += TempFire;
 	}
 	// Use this for initialization
 	void Start () {
@@ -49,8 +52,16 @@ public class Hero : MonoBehaviour {
 	//	if (Input.GetKeyDown(KeyCode.Space)){
 		//	TempFire ();
 	//}
+
 		if (Input.GetAxis ("Jump") == 1 && fireDelegate != null) {
 			fireDelegate ();
+		}
+		if (Input.GetKeyDown (KeyCode.B)) {
+			WeaponSwitch = 1;
+		} else if (Input.GetKeyDown (KeyCode.V)) {
+			WeaponSwitch = 2;
+		} else if (Input.GetKeyDown (KeyCode.Z)) {
+			WeaponSwitch = 0;
 		}
 	
 }

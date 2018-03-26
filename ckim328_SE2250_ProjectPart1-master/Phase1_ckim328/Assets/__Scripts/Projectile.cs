@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 	private Renderer rend;
 	private BoundsCheck bndCheck;
+	public WeaponDefinition def;
 
 	[Header("Set Dynamically")]
 	public Rigidbody rigid;
@@ -37,6 +38,6 @@ public class Projectile : MonoBehaviour {
 	public void SetType (WeaponType eType){
 		_type = eType;
 		WeaponDefinition def = Main.GetWeaponDefinition (_type);
-		rend.material.color = def.projectileColor;
+//		rend.material.color = def.projectileColor;
 	}
 }
